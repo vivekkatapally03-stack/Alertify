@@ -1,0 +1,135 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #f5f7fa;
+}
+
+.signup-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInBackground 0.8s ease;
+}
+
+.signup-card {
+  background: #fff;
+  padding: 40px 50px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  text-align: center;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: slideUpFade 0.8s forwards;
+}
+
+.logo {
+  font-size: 48px;
+  margin-bottom: 15px;
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+.signup-title {
+  font-size: 26px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.signup-title span {
+  color: #d32f2f;
+}
+
+.signup-subtitle {
+  color: #666;
+  margin-bottom: 25px;
+  font-size: 14px;
+}
+
+.form-group {
+  text-align: left;
+  margin-bottom: 18px;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: #d32f2f;
+}
+
+.signup-btn {
+  width: 100%;
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.signup-btn:hover {
+  background-color: #b71c1c;
+}
+
+.login-link {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+.login-link a {
+  color: #d32f2f;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes slideUpFade {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInBackground {
+  0% {
+    background-color: #ffffff;
+  }
+  100% {
+    background-color: #f5f7fa;
+  }
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #d32f2f, 0 0 10px #d32f2f, 0 0 20px #d32f2f;
+  }
+  100% {
+    text-shadow: 0 0 10px #ff5252, 0 0 20px #ff5252, 0 0 30px #ff5252;
+  }
+}
