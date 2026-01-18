@@ -18,7 +18,13 @@ function TrustedContacts({ onClose, viewOnly }) {
       return alert("Please fill all fields!");
     }
 
-    const newContact = { name, relation, number };
+    // Cleans the number
+    const cleanedNumber = number.replace(/\D/g, "");
+    if (cleanedNumber.length < 10) {
+      return alert("Please enter a valid WhatsApp number with country code!");
+    }
+
+    const newContact = { name, relation, number: cleanedNumber };
     const updatedContacts = [...contacts, newContact];
     setContacts(updatedContacts);
     localStorage.setItem("trustedContacts", JSON.stringify(updatedContacts));
@@ -56,10 +62,13 @@ function TrustedContacts({ onClose, viewOnly }) {
             />
             <input
               type="text"
-              placeholder="Contact Number"
+              placeholder="Contact Number e.g. 91xxxxxxxxxx"
               value={number}
               onChange={(e) => setNumber(e.target.value)}
             />
+            <p style={{ fontSize: "12px", color: "#00ffff", marginTop: "-10px" }}>
+              ⚠️ Include country code, no +, spaces, or dashes.
+            </p>
             <div className="modal-buttons">
               <button className="add-btn" onClick={handleAddContact}>
                 Add Contact
@@ -78,7 +87,9 @@ function TrustedContacts({ onClose, viewOnly }) {
               <ul className="contact-list">
                 {contacts.map((c, index) => (
                   <li key={index}>
-                    <span>{c.name} ({c.relation}): {c.number}</span>
+                    <span>
+                      {c.name} ({c.relation}): {c.number}
+                    </span>
                     <button
                       className="delete-btn"
                       onClick={() => handleDelete(index)}

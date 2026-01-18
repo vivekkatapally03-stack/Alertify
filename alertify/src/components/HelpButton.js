@@ -3,7 +3,6 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
-// Fix marker icon issue
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl:
@@ -40,10 +39,17 @@ function HelpButton() {
           }
 
           contacts.forEach((contact) => {
-            const message = `🚨 Emergency Alert!\nIam in trouble.\n Reach me by this location.\nLocation: https://www.google.com/maps?q=${coords.lat},${coords.lon}`;
-            const encodedMessage = encodeURIComponent(message);
-            window.open(`https://wa.me/${contact.number}?text=${encodedMessage}`, "_blank");
-          });
+          const cleanedNumber = contact.number.replace(/\D/g, "");
+
+          const message = `🚨 Emergency Alert!\nI am in trouble.\nReach me by this location.\nLocation: https://www.google.com/maps?q=${coords.lat},${coords.lon}`;
+          const encodedMessage = encodeURIComponent(message);
+
+          window.open(
+            `https://wa.me/${cleanedNumber}?text=${encodedMessage}`,
+            "_blank"
+          );
+        });
+
 
           alert("Emergency messages opened in WhatsApp for all saved contacts!");
         },

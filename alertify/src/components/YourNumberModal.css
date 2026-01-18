@@ -1,4 +1,3 @@
-/* Full-screen overlay */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -56,6 +55,8 @@
 
 /* Save button */
 .add-btn {
+  margin-top: 10px;
+  height: 45px;
   flex: 1;
   background-color: #00ffff;
   color: #000;

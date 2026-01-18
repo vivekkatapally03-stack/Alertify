@@ -1,4 +1,3 @@
-// src/components/YourNumberModal.js
 import React, { useState } from "react";
 import "./YourNumberModal.css";
 
@@ -12,7 +11,15 @@ function YourNumberModal({ onClose }) {
       alert("Please enter your WhatsApp number!");
       return;
     }
-    localStorage.setItem("userNumber", userNumber);
+    // cleans the number
+    const cleanedNumber = userNumber.replace(/\D/g, "");
+
+    if (cleanedNumber.length < 10) {
+      alert("Please enter a valid WhatsApp number with country code!");
+      return;
+    }
+
+    localStorage.setItem("userNumber", cleanedNumber);
     alert("✅ Your number has been saved successfully!");
     onClose();
   };
@@ -23,10 +30,13 @@ function YourNumberModal({ onClose }) {
         <h2>Your WhatsApp Number</h2>
         <input
           type="text"
-          placeholder="Enter your WhatsApp number (with country code)"
+          placeholder="Enter number e.g. 91xxxxxxxxxx"
           value={userNumber}
           onChange={(e) => setUserNumber(e.target.value)}
         />
+        <p style={{ fontSize: "12px", color: "#00ffff", marginTop: "-10px" }}>
+          ⚠️ Include your country code, no +, spaces, or dashes.
+        </p>
         <div className="modal-buttons">
           <button className="add-btn" onClick={handleSave}>
             Save
