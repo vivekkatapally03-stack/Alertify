@@ -22,6 +22,13 @@ This ensures **quick action with zero confusion** during emergencies.
 
 ---
 
+## 🎥 Demo Video
+
+[Watch the Demo Video](https://drive.google.com/file/d/1_cVKHyssBFumhgnKzmYTkaHK1Lz_2u3J/view?usp=drivesdk)
+
+---
+
+
 ## 👨‍💻 Technologies Used
 
 - **Frontend:** HTML, CSS, React
