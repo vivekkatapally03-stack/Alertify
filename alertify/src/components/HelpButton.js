@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
@@ -14,7 +13,7 @@ L.Icon.Default.mergeOptions({
 });
 
 function HelpButton() {
-  const [location, setLocation] = useState(null);
+  const [setLocation] = useState(null);
 
   const handleHelpClick = () => {
     if (navigator.geolocation) {
@@ -79,24 +78,6 @@ function HelpButton() {
       >
         HELP ME 🚨
       </button>
-
-      {location && (
-        <div style={{ marginTop: "20px" }}>
-          <p>📍 Latitude: {location.lat}</p>
-          <p>📍 Longitude: {location.lon}</p>
-
-          <MapContainer
-            center={[location.lat, location.lon]}
-            zoom={15}
-            style={{ height: "400px", width: "100%" }}
-          >
-            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-            <Marker position={[location.lat, location.lon]}>
-              <Popup>Your current location</Popup>
-            </Marker>
-          </MapContainer>
-        </div>
-      )}
     </div>
   );
 }
