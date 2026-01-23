@@ -1,37 +1,63 @@
-# Alertify – Women Safety App
+## 🚨 Alertify – Women Safety App
 
 Alertify is a **simple and fast women safety web application** designed to be used during **high-pressure emergency situations**. The application focuses on **speed, clarity, and ease of use** rather than a complex interface.
 
-## Key Idea
+---
+
+##  💡 Key Idea
 
 In panic situations, users may not have the time or mental clarity to navigate through multiple screens. Hence, Alertify is intentionally built with a **minimal UI containing a single emergency button**.
 
-## How It Works
+---
 
-* The app contains **one main emergency button**
+## ⚙️ How It Works 
+
+* The app contains **Help Me** button.
 * When the button is clicked:
 
-  * The user’s **live location** is captured
-  * An **alert message along with the location link** is sent to **predefined trusted contacts**
+  * The user’s **live location** is captured 📍
+  * An **alert message along with the location link** is sent to **predefined trusted contacts** 📩
 
 This ensures **quick action with zero confusion** during emergencies.
 
-## Technologies Used
+---
 
-* **HTML** – Structure
-* **CSS** – Styling
-* **JavaScript** – Logic and location handling
-* **ReactJS** – Component-based frontend
-* **API's** - Geolocation API, WhatsApp API, Leaflet
+## 🎥 Demo Video
+
+[Watch the Demo Video](https://drive.google.com/file/d/1_cVKHyssBFumhgnKzmYTkaHK1Lz_2u3J/view?usp=drivesdk)
+
+---
+
+
+## 👨‍💻 Technologies Used
+
+- **Frontend:** HTML, CSS, React
+- **API Integration:** WhatsApp API, Geolcation API
+- **Maps:** Leaflet - For **Accurate** location
+- **Language:** JavaScript
+- **Version Control:** Git & Github
+- **Deployment:** Vercel
+
+---
 
 ## Future Enhancements
 
-* SMS / WhatsApp alert integration
-* Real-time backend using Firebase / Node.js
-* User authentication and contact management
-* Continuous location tracking
+* ✉️ SMS / Email alert integration 
+* ⚡ Real-time backend using Firebase / Node.js
+* 👤 User authentication and contact management
+* 📡 Continuous location tracking
 
-## Project Purpose
+---
+
+## 🚀 Installation & Setup Clone the repository:
+```bash
+git clone https://github.com/KatapallyVivek/Alertify.git
+cd Alertify
+npm install
+npm start
+```
+
+## 🎯 Project Purpose
 
 This project was built to demonstrate:
 
