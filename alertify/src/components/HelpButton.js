@@ -13,7 +13,7 @@ L.Icon.Default.mergeOptions({
 });
 
 function HelpButton() {
-  const [setLocation] = useState(null);
+  const [location, setLocation] = useState(null);
 
   const handleHelpClick = () => {
     if (navigator.geolocation) {
@@ -24,6 +24,7 @@ function HelpButton() {
             lon: position.coords.longitude,
           };
           setLocation(coords);
+          console.log(location);
 
           const userNumber = localStorage.getItem("userNumber");
           const contacts = JSON.parse(localStorage.getItem("trustedContacts")) || [];

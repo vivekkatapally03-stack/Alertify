@@ -55,16 +55,17 @@ function LoginPage({ onLogin, onSwitchToSignUp }) {
           </button>
         </form>
         <p className="signup-link">
-          Don’t have an account?{" "}
-          <a
-            href="#"
+          {"Don't have an account?"}{" "}
+          <button
+            
             onClick={(e) => {
               e.preventDefault();
               onSwitchToSignUp();
             }}
           >
             Sign up
-          </a>
+          </button>
+          
         </p>
       </div>
     </div>

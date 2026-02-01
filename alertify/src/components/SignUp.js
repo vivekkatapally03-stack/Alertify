@@ -91,15 +91,15 @@ function SignUp({ onSignUp, onSwitchToLogin }) {
         </form>
         <p className="login-link">
           Already have an account?{" "}
-          <a
-            href="#"
+          <button
+           
             onClick={(e) => {
               e.preventDefault();
               onSwitchToLogin();
             }}
           >
             Login
-          </a>
+          </button>
         </p>
       </div>
     </div>
